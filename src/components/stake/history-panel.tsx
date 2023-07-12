@@ -7,6 +7,7 @@ import { useConnect } from '@/hooks/useConnect';
 import { renderAmount, renderDateString, renderTransactionHash } from '@/utils';
 import { usePaginatedAtomQuery } from '@/hooks/query/usePaginatedAtomQuery';
 import { stakeHistoryAtom } from '@/state/query/stake';
+import { useStakeRole } from '@/hooks/useStakeRole';
 
 const columns = [
   {
