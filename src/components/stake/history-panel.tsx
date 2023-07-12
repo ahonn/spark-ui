@@ -38,6 +38,7 @@ const columns = [
 
 export default function HistoryPanel() {
   const { address } = useConnect();
+  const { isValidator } = useStakeRole();
   const { pageNumber, data, isLoading, setPageNumber, setPageSize } = usePaginatedAtomQuery(stakeHistoryAtom, address);
 
   const expandedRowRender = useCallback(
@@ -86,6 +87,7 @@ export default function HistoryPanel() {
           rowExpandable: (record: any) => record.transactions,
         }}
         isLoading={isLoading}
+        backgroundColor={isValidator ? 'secondary' : 'primary'}
       />
       <Box marginTop="30px">
         <Pagination
